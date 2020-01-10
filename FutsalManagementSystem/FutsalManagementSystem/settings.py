@@ -55,7 +55,7 @@ ROOT_URLCONF = 'FutsalManagementSystem.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
+        'DIRS': ['events/templates'
 
         ],
         'APP_DIRS': True,
