@@ -9,12 +9,46 @@
 <body>
     <h1>Search For Events</h1>
     <Form method='post' action="/search/">
-               
+        {% csrf_token %}      
         <input type="text" name="srh" placeholder="Enter The Name of Event or Venue"> 
         <button> Search</button>
 
 
-    </Form>
+    </Form><br>
+    <div>
+        {% if messages %}
+            <ul class="messages">
+                {% for k in messages %}
+                <li style="color: red">{{ k }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div><br>
+    <div style="color: blue">
+        {% if sr %}
+            {% for k in sr %}
+            <table border="0px" width="300px">
+                <tr>
+                    <td>Name of Event</td>
+                    <td>{{ k.event_name }}</td>
+                </tr>
+                <tr>
+                    <td>Venue</td>
+                    <td>{{ k.venue }}</td>
+                </tr>
+                <tr>
+                    <td>Event Data</td>
+                    <td>{{ k.event_date }}</td>
+                </tr>
+                <tr>
+                    <td>Name of Manager</td>
+                    <td>{{ k.manager }}</td>
+                </tr>
+
+            </table>
+            
+    
+    </div>
 
     
 </body>
