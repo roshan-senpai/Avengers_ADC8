@@ -8,7 +8,7 @@
     <title>Update Event Form </title>
 </head>
 <body>
-    <form method="POST" >
+    <form method="POST" action="update/{{event.id}}" >
         {% csrf_token %}
         Update Event Name: <input name="event_name" type="text" value ={{event.event_name}}> <br>
         Update Venue: <input name="venue" type="text" value={{event.venue}}> <br>
