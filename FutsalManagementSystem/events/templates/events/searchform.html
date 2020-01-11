@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Search Page</title>
 </head>
-<body>
-    <form method="POST" action="Search"><br>
+<body>   
+    <form method="GET" action="search"><br>
+        {% csrf_token %}
         <label>Enter a Word to Search </label><br><br>
-        <input type="text" placeholder="Enter Event Name or Venue"><br><br>
+        <input type="text" name="srh"><br><br>
         <button> Search</button>
-
-
     </form>
 </body>
 </html>

@@ -34,4 +34,9 @@ def view_update_form_data_in_db(request,ID):
 
 # view function for searhing in the database page
 def view_search_data(request):
-    return render(request,'searchform')
+    if request.method=="GET":
+        search=request.GET['srh']
+        Event.objects.filter(event_name__contains=search)
+        return render(request,'events/searchdata.html')
+    else:
+        return HttpResponse("Not Found")
