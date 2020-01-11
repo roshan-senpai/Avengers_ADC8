@@ -28,7 +28,7 @@ def view_update_form_data_in_db(request,ID):
     event_obj.event_date = request.POST['event_date']
     event_obj.manager = request.POST['manager']
     event_obj.save()
-    return HttpResponse("Record Updated!!")
+    return HttpResponse("            Record Updated!!")
 
 
 # view function for searhing in the database page
