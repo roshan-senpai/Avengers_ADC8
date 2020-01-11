@@ -9,8 +9,8 @@ def view_update_page(request):
 
 # view function for listing event data page
 def view_eventdata_updateform(request,ID):
-    print(ID)
-    event_obj = Event.objects.get(id=ID)
+    # print(ID)
+    event_obj = Event.objects.all()
     print(event_obj)
     context_varible = {
         'event':event_obj

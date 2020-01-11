@@ -18,6 +18,9 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('update/',view_update_page),
+    # path('eventdataform/<int:ID>',view_eventdata_updateform),
+    # path('eventdataupdateform/<int:ID>',view_update_form_data_in_db)
 ]
 
 urlpatterns += [
