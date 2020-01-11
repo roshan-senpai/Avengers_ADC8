@@ -4,4 +4,6 @@ from .views import *
 
 urlpatterns=[
     path('viewevent/',view_event_data),
+    path('eventform',view_event_form),
+    
 ]
