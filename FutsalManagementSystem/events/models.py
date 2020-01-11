@@ -7,3 +7,6 @@ class Event(models.Model):
     event_date = models.DateTimeField('Event Date')
     manager = models.CharField('Manager Name', max_length=100)
     event_description=models.CharField('Event Description',max_length=200)    
+
+    def __str__(self):
+        return str(self.id) + " " + self.event_name + " at " + self.venue
