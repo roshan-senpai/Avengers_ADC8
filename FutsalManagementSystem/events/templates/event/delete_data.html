@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Delete Event</title>
+</head>
+<body>
+    <form method='POST' action="delete">
+        {% csrf_token %}
+        Event Name: {{event.event_name}}<br>
+        Event Venue: {{event.venue}}<br>
+        Event Date: {{event.event_date}}<br>
+        Manager:{{event.manager}}<br>
+        <h1>Above datas are deleted</h1>
+    </form>
+</body>
+</html>
