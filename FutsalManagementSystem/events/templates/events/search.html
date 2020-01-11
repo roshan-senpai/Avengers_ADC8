@@ -9,6 +9,7 @@
 <body>
     <h1>Enter a name to Search</h1>
     <form method="POST">
+        {% csrf_token %}
     <input type="text" name="search_data">
     <input type="submit">
     </form>
