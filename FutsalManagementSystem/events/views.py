@@ -28,15 +28,26 @@ def view_update_form_data_in_db(request,ID):
     event_obj.event_date = request.POST['event_date']
     event_obj.manager = request.POST['manager']
     event_obj.save()
-
     return HttpResponse("Record Updated!!")
 
 
 # view function for searhing in the database page
-def view_search_data(request):
-    if request.method=="GET":
-        search=request.GET['srh']
-        Event.objects.filter(event_name__contains=search)
-        return render(request,'events/searchdata.html')
+def view_search(request):
+    if request.method=='POST':
+        search=request.POST['srh']
+        if search:
+            match=Event.objects.filter(event_name__icontains=search)
+
+            if match:
+                return render(request,'search.html',{'sr':match})
+
+            else:
+                return HttpResponse('NO EVENT FOUND!')
+                       
+        else:
+            return HttpResponse('ENTER EVENT NAME!!')
+
     else:
-        return HttpResponse("Not Found")
+        return render(request,'search.html')
+
+
