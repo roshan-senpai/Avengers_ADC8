@@ -32,22 +32,29 @@ def view_update_form_data_in_db(request,ID):
 
 
 # view function for searhing in the database page
-def view_search(request):
-    if request.method=='POST':
-        search=request.POST['srh']
-        if search:
-            match=Event.objects.filter(event_name__icontains=search)
+def view_search_data(request,ID):
+    print(ID)
+    event_obj = Event.objects.get(id=ID)
+    print(event_obj)
+    context_varible = {
+        'event':event_obj
+    }
+    return render(request,'events/searchdata.html',context_varible)
+    # if request.method=='POST':
+    #     search=request.POST['srh']
+    #     if search:
+    #         match=Event.objects.filter(event_name__icontains=search)
 
-            if match:
-                return render(request,'search.html',{'sr':match})
+    #         if match:
+    #             return render(request,'search.html',{'sr':match})
 
-            else:
-                return HttpResponse('NO EVENT FOUND!')
+    #         else:
+    #             return HttpResponse('NO EVENT FOUND!')
                        
-        else:
-            return HttpResponse('ENTER EVENT NAME!!')
+    #     else:
+    #         return HttpResponse('ENTER EVENT NAME!!')
 
-    else:
-        return render(request,'search.html')
+    # else:
+    #     return render(request,'searchdata.html')
 
-
+    

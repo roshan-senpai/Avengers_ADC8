@@ -5,15 +5,17 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>List of Events</title>
+     <title>List of Searched Events</title>
  </head>
  <body>
-     <form method="POST"  >
+     <form method="POST" ><br><br>
          {% csrf_token %}
+         <input type="text" placeholder="Enter Event's Name" name="srh"><br><br>
+         <button type="submit">Submit</button><br><br>
          <h1>
          List of Events
          </h1>
-         {% for event in event %}
+         {% for event in events %} 
          Event's Name : {{event.event_name}} <br>
          Event's Venue : {{event.venue}} <br>
          Event's Date: {{event.event_date}}<br>

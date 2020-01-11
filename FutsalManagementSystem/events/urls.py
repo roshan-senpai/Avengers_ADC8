@@ -5,6 +5,6 @@ from .views import *
 urlpatterns = [
     path('eventdataform/<int:ID>',view_eventform),
     path('eventdataform/update/<int:ID>',view_update_form_data_in_db),
-    path('searchdata/',view_search),
+    path('searchdata/<int:ID>',view_search_data)
 
 ]
