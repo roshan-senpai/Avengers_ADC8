@@ -12,3 +12,25 @@ def view_event_data(request):
 
 def view_event_form(request):
     return render(request,'event/save_event.html')
+    
+def view_event_save(request):
+    if request.method == "POST":
+        get_name=request.POST['event_name']
+        get_venue=request.POST['event_venue']
+        get_date=request.POST['event_date']
+        get_manager=request.POST['event_manager']
+        Event.objects.create(event_name=get_name,venue=get_venue,event_date=get_date,manager=get_manager)
+        return HttpResponse("Added Sucessfully")    
+    else:
+        return HttpResponse("Error while adding") 
+
+def view_event_delete(request,ID):
+    print(ID)
+    event_obj=Event.objects.get(id=ID)
+    con_var={
+        'event':event_obj
+    }
+    event_obj.delete()
+    return render(request,'event/delete_data.html',con_var)
+    
+    
