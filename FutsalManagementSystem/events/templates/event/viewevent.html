@@ -13,8 +13,8 @@
     Event's Name : {{events.event_name}} <br>
     Event's venue : {{events.venue}} <br>
     Event Date : {{events.event_date}}<br>
-    Event Manager : {{events.manager}}<br><br><br>
-    <a href="delete/{{events.id}}">Delete this</a>
+    Event Manager : {{events.manager}}<br><br>
+    <a href="delete/{{events.id}}">Delete this event</a><br><br>
     {% empty %}
         There are no Events.
     {% endfor %}
