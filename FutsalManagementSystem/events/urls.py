@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.contrib import admin
 from django.urls import path
 from .views import *
@@ -18,3 +19,11 @@ urlpatterns = [
 
 ]
 >>>>>>> origin/Sudiplamatamang_TheAvengers_updateandsearchfunction
+=======
+from django.urls import path
+from .views import *
+
+urlpatterns=[
+    path('upload/',upload)
+]
+>>>>>>> origin/RonitShrestha_Avengers_UploadAndDownloadFileFunctionality

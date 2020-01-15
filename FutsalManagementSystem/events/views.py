@@ -1,8 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 <<<<<<< HEAD
+<<<<<<< HEAD
 from .models import Event
 from django.http import HttpResponse
+=======
+from django.views.generic import TemplateView
+from django.core.files.storage import FileSystemStorage
+>>>>>>> origin/RonitShrestha_Avengers_UploadAndDownloadFileFunctionality
 
 # Create your views here.
 def view_event_data(request):
@@ -12,6 +17,7 @@ def view_event_data(request):
     }
     return render(request,'event/viewevent.html',con_var)
 
+<<<<<<< HEAD
 def view_event_form(request):
     return render(request,'event/save_event.html')
     
@@ -95,3 +101,12 @@ def view_search_data(request,ID):
 
 >>>>>>> origin/Sudiplamatamang_TheAvengers_updateandsearchfunction
     
+=======
+
+def upload(request):
+    if request.method == 'POST':
+        uploaded_file = request.FILES['doc']
+        file_object = FileSystemStorage()
+        file_object.save(uploaded_file.name, uploaded_file)
+    return render(request,'upload.html')
+>>>>>>> origin/RonitShrestha_Avengers_UploadAndDownloadFileFunctionality

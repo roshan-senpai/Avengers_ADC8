@@ -22,9 +22,12 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+<<<<<<< HEAD
     path('events/',include('events.urls')),
 ]
 
 urlpatterns += [
+=======
+>>>>>>> origin/RonitShrestha_Avengers_UploadAndDownloadFileFunctionality
     path('events/',include('events.urls'))
 ]
