@@ -56,11 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-<<<<<<< HEAD
-            'events/templates',
-=======
             'events/templates'
->>>>>>> origin/RonitShrestha_Avengers_UploadAndDownloadFileFunctionality
         ],
         'APP_DIRS': True,
         'OPTIONS': {

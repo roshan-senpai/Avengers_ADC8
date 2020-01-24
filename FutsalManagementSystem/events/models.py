@@ -9,8 +9,4 @@ class Event(models.Model):
     manager = models.CharField('Manager Name', max_length=100)
 
     def __str__(self):
-<<<<<<< HEAD
         return str(self.id) + " " + self.event_name + " at " + self.venue
-=======
-        return str(self.id) + " " + self.event_name + " " + self.venue+ " " + str(self.event_date) + " " + self.manager
->>>>>>> origin/Sudiplamatamang_TheAvengers_updateandsearchfunction
